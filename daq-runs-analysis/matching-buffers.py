@@ -108,6 +108,14 @@ def main(file):
 
     # Plot the TA-TC relations
     plot_ta_fragment_counts(np.array(ta_ta_counts), np.array(tc_fragment_counts))
+
+    # Calculate the proportion
+    tp_total_count = np.sum(tp_fragment_counts)
+    ta_total_count = np.sum(ta_fragment_counts)
+
+    print("TP Fragment TPs:", tp_total_count)
+    print("TA Fragment TPs:", ta_total_count)
+    print("Proportion:", tp_total_count / ta_total_count)
     return
 
 
