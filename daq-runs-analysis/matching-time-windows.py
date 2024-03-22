@@ -28,8 +28,8 @@ def plot_png_time_windows(tp_window: np.ndarray, ta_window: np.ndarray) -> None:
     plt.plot(ta_window, '-o', ms=3, color="#EE442F", label="TA Fragments", alpha=0.4)
 
     plt.title("TP & TA Fragment:\nTime Window Widths")
-    plt.xlabel("Time Window Width (16 ns / Tick)")
-    plt.ylabel("TriggerRecord (1 TP & TA Fragment per TR)")
+    plt.xlabel("TriggerRecord (1 TP & TA Fragment per TR)")
+    plt.ylabel("Time Window Width (16 ns / Tick)")
     plt.legend()
 
     plt.tight_layout()
@@ -42,8 +42,8 @@ def plot_png_time_windows(tp_window: np.ndarray, ta_window: np.ndarray) -> None:
     plt.plot(ta_window - tp_window, 'ok', ms=2, label="Difference: TA - TP", alpha=0.4)
 
     plt.title("TP & TA Fragment Difference:\nTime Window Widths")
-    plt.xlabel("Time Window Width Difference (16 ns / Tick)")
-    plt.ylabel("TriggerRecord (1 TP & TA Fragment per TR)")
+    plt.xlabel("TriggerRecord (1 TP & TA Fragment per TR)")
+    plt.ylabel("Time Window Width Difference (16 ns / Tick)")
     plt.legend()
 
     plt.tight_layout()
