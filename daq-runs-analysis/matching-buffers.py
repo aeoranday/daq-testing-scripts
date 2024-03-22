@@ -35,8 +35,8 @@ def plot_tp_fragment_counts(tp_fragment_counts: np.ndarray, ta_fragment_counts: 
 
     plt.figure(figsize=(6, 4), dpi=200)
 
-    plt.plot(tp_fragment_counts, '-o', color="#63ACBE", label="TP Fragments")
-    plt.plot(ta_fragment_counts, '-o', color="#EE442F", label="TA Fragments")
+    plt.plot(tp_fragment_counts, '-o', ms=3, color="#63ACBE", label="TP Fragments", alpha=0.2)
+    plt.plot(ta_fragment_counts, '-o', ms=3, color="#EE442F", label="TA Fragments", alpha=0.2)
 
     plt.title("Replay TP & TA Fragments\n Number of TPs Per Fragments")
     plt.xlabel("TriggerRecord (1 TP & 1 TA Fragment per TR)")
@@ -56,8 +56,8 @@ def plot_ta_fragment_counts(ta_fragment_counts: np.ndarray, tc_fragment_counts: 
     """
     plt.figure(figsize=(6, 4), dpi=200)
 
-    plt.plot(ta_fragment_counts, '-o', color="#EE442F", label="TA Fragments")
-    plt.plot(tc_fragment_counts, '-o', color="#3BB27A", label="TC Fragments")
+    plt.plot(ta_fragment_counts, '-o', ms=3, color="#EE442F", label="TA Fragments", alpha=0.2)
+    plt.plot(tc_fragment_counts, '-o', ms=3, color="#3BB27A", label="TC Fragments", alpha=0.2)
 
     plt.title("Replay TA & TC Fragments\n Number of TAs Per Fragment")
     plt.xlabel("TriggerRecord (1 TA & 1 TC Fragment per TR)")
