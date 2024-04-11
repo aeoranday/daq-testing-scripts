@@ -31,8 +31,8 @@ def main(file, limit, fragment):
 
     plotter.plot_histogram(tps['channel'], hist_style)
     hist, _ = np.histogram(tps['channel'], bins=np.arange(0, 3072))
-    print(len(tps))
-    print(np.where(hist > limit))
+    print(f"Total Number of TPs: {len(tps)}.")
+    print(f"Above Limit = {limit} Channels:", np.where(hist > limit)[0])
     return
 
 
