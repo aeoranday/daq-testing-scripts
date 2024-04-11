@@ -35,10 +35,15 @@ def plot_png_tp_rates(num_tps: list[int]) -> None:
 @click.argument("file")
 @click.option("--offset", '-o', default=10, type=click.INT)
 @click.option("--num", '-n', default=10, type=click.INT)
-def main(file, offset, num):
+@click.option("--all-frags", '-a', default=False)
+def main(file, offset, num, all_frags):
     data = TPReader(file)
     num_tps = []
-    for path in data.get_fragment_paths()[offset:offset+num]:
+    limit = offset+num
+    if all_frags:
+        offset = 0
+        limit = None
+    for path in data.get_fragment_paths()[offset:limit]:
         tps = data.read_fragment(path)
         num_tps.append(len(tps))
 
